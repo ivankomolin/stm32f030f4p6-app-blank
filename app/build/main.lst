@@ -1,0 +1,485 @@
+ARM GAS  /tmp/ccte4f7i.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.MX_GPIO_Init,"ax",%progbits
+  20              		.align	2
+  21              		.code	16
+  22              		.thumb_func
+  24              	MX_GPIO_Init:
+  25              	.LFB37:
+  26              		.file 1 "Src/main.c"
+   1:Src/main.c    **** /* USER CODE BEGIN Header */
+   2:Src/main.c    **** /**
+   3:Src/main.c    ****   ******************************************************************************
+   4:Src/main.c    ****   * @file           : main.c
+   5:Src/main.c    ****   * @brief          : Main program body
+   6:Src/main.c    ****   ******************************************************************************
+   7:Src/main.c    ****   * @attention
+   8:Src/main.c    ****   *
+   9:Src/main.c    ****   * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
+  10:Src/main.c    ****   * All rights reserved.</center></h2>
+  11:Src/main.c    ****   *
+  12:Src/main.c    ****   * This software component is licensed by ST under BSD 3-Clause license,
+  13:Src/main.c    ****   * the "License"; You may not use this file except in compliance with the
+  14:Src/main.c    ****   * License. You may obtain a copy of the License at:
+  15:Src/main.c    ****   *                        opensource.org/licenses/BSD-3-Clause
+  16:Src/main.c    ****   *
+  17:Src/main.c    ****   ******************************************************************************
+  18:Src/main.c    ****   */
+  19:Src/main.c    **** /* USER CODE END Header */
+  20:Src/main.c    **** 
+  21:Src/main.c    **** /* Includes ------------------------------------------------------------------*/
+  22:Src/main.c    **** #include "main.h"
+  23:Src/main.c    **** 
+  24:Src/main.c    **** /* Private includes ----------------------------------------------------------*/
+  25:Src/main.c    **** /* USER CODE BEGIN Includes */
+  26:Src/main.c    **** 
+  27:Src/main.c    **** /* USER CODE END Includes */
+  28:Src/main.c    **** 
+  29:Src/main.c    **** /* Private typedef -----------------------------------------------------------*/
+  30:Src/main.c    **** /* USER CODE BEGIN PTD */
+  31:Src/main.c    **** 
+  32:Src/main.c    **** /* USER CODE END PTD */
+ARM GAS  /tmp/ccte4f7i.s 			page 2
+
+
+  33:Src/main.c    **** 
+  34:Src/main.c    **** /* Private define ------------------------------------------------------------*/
+  35:Src/main.c    **** /* USER CODE BEGIN PD */
+  36:Src/main.c    **** 
+  37:Src/main.c    **** /* USER CODE END PD */
+  38:Src/main.c    **** 
+  39:Src/main.c    **** /* Private macro -------------------------------------------------------------*/
+  40:Src/main.c    **** /* USER CODE BEGIN PM */
+  41:Src/main.c    **** 
+  42:Src/main.c    **** /* USER CODE END PM */
+  43:Src/main.c    **** 
+  44:Src/main.c    **** /* Private variables ---------------------------------------------------------*/
+  45:Src/main.c    **** 
+  46:Src/main.c    **** /* USER CODE BEGIN PV */
+  47:Src/main.c    **** 
+  48:Src/main.c    **** /* USER CODE END PV */
+  49:Src/main.c    **** 
+  50:Src/main.c    **** /* Private function prototypes -----------------------------------------------*/
+  51:Src/main.c    **** void SystemClock_Config(void);
+  52:Src/main.c    **** static void MX_GPIO_Init(void);
+  53:Src/main.c    **** /* USER CODE BEGIN PFP */
+  54:Src/main.c    **** 
+  55:Src/main.c    **** /* USER CODE END PFP */
+  56:Src/main.c    **** 
+  57:Src/main.c    **** /* Private user code ---------------------------------------------------------*/
+  58:Src/main.c    **** /* USER CODE BEGIN 0 */
+  59:Src/main.c    **** 
+  60:Src/main.c    **** /* USER CODE END 0 */
+  61:Src/main.c    **** 
+  62:Src/main.c    **** /**
+  63:Src/main.c    ****   * @brief  The application entry point.
+  64:Src/main.c    ****   * @retval int
+  65:Src/main.c    ****   */
+  66:Src/main.c    **** int main(void)
+  67:Src/main.c    **** {
+  68:Src/main.c    ****   /* USER CODE BEGIN 1 */
+  69:Src/main.c    **** 
+  70:Src/main.c    ****   /* USER CODE END 1 */
+  71:Src/main.c    ****   
+  72:Src/main.c    **** 
+  73:Src/main.c    ****   /* MCU Configuration--------------------------------------------------------*/
+  74:Src/main.c    **** 
+  75:Src/main.c    ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  76:Src/main.c    ****   HAL_Init();
+  77:Src/main.c    **** 
+  78:Src/main.c    ****   /* USER CODE BEGIN Init */
+  79:Src/main.c    **** 
+  80:Src/main.c    ****   /* USER CODE END Init */
+  81:Src/main.c    **** 
+  82:Src/main.c    ****   /* Configure the system clock */
+  83:Src/main.c    ****   SystemClock_Config();
+  84:Src/main.c    **** 
+  85:Src/main.c    ****   /* USER CODE BEGIN SysInit */
+  86:Src/main.c    **** 
+  87:Src/main.c    ****   /* USER CODE END SysInit */
+  88:Src/main.c    **** 
+  89:Src/main.c    ****   /* Initialize all configured peripherals */
+ARM GAS  /tmp/ccte4f7i.s 			page 3
+
+
+  90:Src/main.c    ****   MX_GPIO_Init();
+  91:Src/main.c    ****   /* USER CODE BEGIN 2 */
+  92:Src/main.c    **** 
+  93:Src/main.c    ****   /* USER CODE END 2 */
+  94:Src/main.c    **** 
+  95:Src/main.c    ****   /* Infinite loop */
+  96:Src/main.c    ****   /* USER CODE BEGIN WHILE */
+  97:Src/main.c    ****   while (1)
+  98:Src/main.c    ****   {
+  99:Src/main.c    ****     /* USER CODE END WHILE */
+ 100:Src/main.c    ****     HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+ 101:Src/main.c    ****     HAL_Delay(1000);
+ 102:Src/main.c    ****     HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+ 103:Src/main.c    ****     HAL_Delay(1000);
+ 104:Src/main.c    ****     /* USER CODE BEGIN 3 */
+ 105:Src/main.c    ****   }
+ 106:Src/main.c    ****   /* USER CODE END 3 */
+ 107:Src/main.c    **** }
+ 108:Src/main.c    **** 
+ 109:Src/main.c    **** /**
+ 110:Src/main.c    ****   * @brief System Clock Configuration
+ 111:Src/main.c    ****   * @retval None
+ 112:Src/main.c    ****   */
+ 113:Src/main.c    **** void SystemClock_Config(void)
+ 114:Src/main.c    **** {
+ 115:Src/main.c    ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+ 116:Src/main.c    ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 117:Src/main.c    **** 
+ 118:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks 
+ 119:Src/main.c    ****   */
+ 120:Src/main.c    ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+ 121:Src/main.c    ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 122:Src/main.c    ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+ 123:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+ 124:Src/main.c    ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 125:Src/main.c    ****   {
+ 126:Src/main.c    ****     Error_Handler();
+ 127:Src/main.c    ****   }
+ 128:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks 
+ 129:Src/main.c    ****   */
+ 130:Src/main.c    ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+ 131:Src/main.c    ****                               |RCC_CLOCKTYPE_PCLK1;
+ 132:Src/main.c    ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+ 133:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 134:Src/main.c    ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+ 135:Src/main.c    **** 
+ 136:Src/main.c    ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
+ 137:Src/main.c    ****   {
+ 138:Src/main.c    ****     Error_Handler();
+ 139:Src/main.c    ****   }
+ 140:Src/main.c    **** }
+ 141:Src/main.c    **** 
+ 142:Src/main.c    **** /**
+ 143:Src/main.c    ****   * @brief GPIO Initialization Function
+ 144:Src/main.c    ****   * @param None
+ 145:Src/main.c    ****   * @retval None
+ 146:Src/main.c    ****   */
+ARM GAS  /tmp/ccte4f7i.s 			page 4
+
+
+ 147:Src/main.c    **** static void MX_GPIO_Init(void)
+ 148:Src/main.c    **** {
+  27              		.loc 1 148 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 24
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 10B5     		push	{r4, lr}
+  32              	.LCFI0:
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  36 0002 86B0     		sub	sp, sp, #24
+  37              	.LCFI1:
+  38              		.cfi_def_cfa_offset 32
+ 149:Src/main.c    ****   GPIO_InitTypeDef GPIO_InitStruct = {0};
+  39              		.loc 1 149 0
+  40 0004 1422     		movs	r2, #20
+  41 0006 0021     		movs	r1, #0
+  42 0008 01A8     		add	r0, sp, #4
+  43 000a FFF7FEFF 		bl	memset
+  44              	.LVL0:
+  45              	.LBB2:
+ 150:Src/main.c    **** 
+ 151:Src/main.c    ****   /* GPIO Ports Clock Enable */
+ 152:Src/main.c    ****   __HAL_RCC_GPIOA_CLK_ENABLE();
+  46              		.loc 1 152 0
+  47 000e 0F4A     		ldr	r2, .L2
+  48 0010 5169     		ldr	r1, [r2, #20]
+  49 0012 8023     		movs	r3, #128
+  50 0014 9B02     		lsls	r3, r3, #10
+  51 0016 1943     		orrs	r1, r3
+  52 0018 5161     		str	r1, [r2, #20]
+  53 001a 5269     		ldr	r2, [r2, #20]
+  54 001c 1340     		ands	r3, r2
+  55 001e 0093     		str	r3, [sp]
+  56 0020 009B     		ldr	r3, [sp]
+  57              	.LBE2:
+ 153:Src/main.c    **** 
+ 154:Src/main.c    ****   /*Configure GPIO pin Output Level */
+ 155:Src/main.c    ****   HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+  58              		.loc 1 155 0
+  59 0022 9024     		movs	r4, #144
+  60 0024 E405     		lsls	r4, r4, #23
+  61 0026 0022     		movs	r2, #0
+  62 0028 1021     		movs	r1, #16
+  63 002a 2000     		movs	r0, r4
+  64 002c FFF7FEFF 		bl	HAL_GPIO_WritePin
+  65              	.LVL1:
+ 156:Src/main.c    **** 
+ 157:Src/main.c    ****   /*Configure GPIO pin : LED_Pin */
+ 158:Src/main.c    ****   GPIO_InitStruct.Pin = LED_Pin;
+  66              		.loc 1 158 0
+  67 0030 1023     		movs	r3, #16
+  68 0032 0193     		str	r3, [sp, #4]
+ 159:Src/main.c    ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  69              		.loc 1 159 0
+  70 0034 0F3B     		subs	r3, r3, #15
+ARM GAS  /tmp/ccte4f7i.s 			page 5
+
+
+  71 0036 0293     		str	r3, [sp, #8]
+ 160:Src/main.c    ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+  72              		.loc 1 160 0
+  73 0038 0023     		movs	r3, #0
+  74 003a 0393     		str	r3, [sp, #12]
+ 161:Src/main.c    ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  75              		.loc 1 161 0
+  76 003c 0493     		str	r3, [sp, #16]
+ 162:Src/main.c    ****   HAL_GPIO_Init(LED_GPIO_Port, &GPIO_InitStruct);
+  77              		.loc 1 162 0
+  78 003e 01A9     		add	r1, sp, #4
+  79 0040 2000     		movs	r0, r4
+  80 0042 FFF7FEFF 		bl	HAL_GPIO_Init
+  81              	.LVL2:
+ 163:Src/main.c    **** 
+ 164:Src/main.c    **** }
+  82              		.loc 1 164 0
+  83 0046 06B0     		add	sp, sp, #24
+  84              		@ sp needed
+  85 0048 10BD     		pop	{r4, pc}
+  86              	.L3:
+  87 004a C046     		.align	2
+  88              	.L2:
+  89 004c 00100240 		.word	1073876992
+  90              		.cfi_endproc
+  91              	.LFE37:
+  93              		.section	.text.SystemClock_Config,"ax",%progbits
+  94              		.align	2
+  95              		.global	SystemClock_Config
+  96              		.code	16
+  97              		.thumb_func
+  99              	SystemClock_Config:
+ 100              	.LFB36:
+ 114:Src/main.c    ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+ 101              		.loc 1 114 0
+ 102              		.cfi_startproc
+ 103              		@ args = 0, pretend = 0, frame = 64
+ 104              		@ frame_needed = 0, uses_anonymous_args = 0
+ 105 0000 00B5     		push	{lr}
+ 106              	.LCFI2:
+ 107              		.cfi_def_cfa_offset 4
+ 108              		.cfi_offset 14, -4
+ 109 0002 91B0     		sub	sp, sp, #68
+ 110              	.LCFI3:
+ 111              		.cfi_def_cfa_offset 72
+ 115:Src/main.c    ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 112              		.loc 1 115 0
+ 113 0004 3022     		movs	r2, #48
+ 114 0006 0021     		movs	r1, #0
+ 115 0008 04A8     		add	r0, sp, #16
+ 116 000a FFF7FEFF 		bl	memset
+ 117              	.LVL3:
+ 116:Src/main.c    **** 
+ 118              		.loc 1 116 0
+ 119 000e 1022     		movs	r2, #16
+ 120 0010 0021     		movs	r1, #0
+ 121 0012 6846     		mov	r0, sp
+ARM GAS  /tmp/ccte4f7i.s 			page 6
+
+
+ 122 0014 FFF7FEFF 		bl	memset
+ 123              	.LVL4:
+ 120:Src/main.c    ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 124              		.loc 1 120 0
+ 125 0018 0223     		movs	r3, #2
+ 126 001a 0493     		str	r3, [sp, #16]
+ 121:Src/main.c    ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+ 127              		.loc 1 121 0
+ 128 001c 013B     		subs	r3, r3, #1
+ 129 001e 0793     		str	r3, [sp, #28]
+ 122:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+ 130              		.loc 1 122 0
+ 131 0020 0F33     		adds	r3, r3, #15
+ 132 0022 0893     		str	r3, [sp, #32]
+ 124:Src/main.c    ****   {
+ 133              		.loc 1 124 0
+ 134 0024 04A8     		add	r0, sp, #16
+ 135 0026 FFF7FEFF 		bl	HAL_RCC_OscConfig
+ 136              	.LVL5:
+ 130:Src/main.c    ****                               |RCC_CLOCKTYPE_PCLK1;
+ 137              		.loc 1 130 0
+ 138 002a 0723     		movs	r3, #7
+ 139 002c 0093     		str	r3, [sp]
+ 132:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 140              		.loc 1 132 0
+ 141 002e 0023     		movs	r3, #0
+ 142 0030 0193     		str	r3, [sp, #4]
+ 133:Src/main.c    ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+ 143              		.loc 1 133 0
+ 144 0032 0293     		str	r3, [sp, #8]
+ 134:Src/main.c    **** 
+ 145              		.loc 1 134 0
+ 146 0034 0393     		str	r3, [sp, #12]
+ 136:Src/main.c    ****   {
+ 147              		.loc 1 136 0
+ 148 0036 0021     		movs	r1, #0
+ 149 0038 6846     		mov	r0, sp
+ 150 003a FFF7FEFF 		bl	HAL_RCC_ClockConfig
+ 151              	.LVL6:
+ 140:Src/main.c    **** 
+ 152              		.loc 1 140 0
+ 153 003e 11B0     		add	sp, sp, #68
+ 154              		@ sp needed
+ 155 0040 00BD     		pop	{pc}
+ 156              		.cfi_endproc
+ 157              	.LFE36:
+ 159 0042 C046     		.section	.text.main,"ax",%progbits
+ 160              		.align	2
+ 161              		.global	main
+ 162              		.code	16
+ 163              		.thumb_func
+ 165              	main:
+ 166              	.LFB35:
+  67:Src/main.c    ****   /* USER CODE BEGIN 1 */
+ 167              		.loc 1 67 0
+ 168              		.cfi_startproc
+ 169              		@ Volatile: function does not return.
+ARM GAS  /tmp/ccte4f7i.s 			page 7
+
+
+ 170              		@ args = 0, pretend = 0, frame = 0
+ 171              		@ frame_needed = 0, uses_anonymous_args = 0
+ 172 0000 70B5     		push	{r4, r5, r6, lr}
+ 173              	.LCFI4:
+ 174              		.cfi_def_cfa_offset 16
+ 175              		.cfi_offset 4, -16
+ 176              		.cfi_offset 5, -12
+ 177              		.cfi_offset 6, -8
+ 178              		.cfi_offset 14, -4
+  76:Src/main.c    **** 
+ 179              		.loc 1 76 0
+ 180 0002 FFF7FEFF 		bl	HAL_Init
+ 181              	.LVL7:
+  83:Src/main.c    **** 
+ 182              		.loc 1 83 0
+ 183 0006 FFF7FEFF 		bl	SystemClock_Config
+ 184              	.LVL8:
+  90:Src/main.c    ****   /* USER CODE BEGIN 2 */
+ 185              		.loc 1 90 0
+ 186 000a FFF7FEFF 		bl	MX_GPIO_Init
+ 187              	.LVL9:
+ 188              	.L6:
+ 100:Src/main.c    ****     HAL_Delay(1000);
+ 189              		.loc 1 100 0 discriminator 1
+ 190 000e 9025     		movs	r5, #144
+ 191 0010 ED05     		lsls	r5, r5, #23
+ 192 0012 0122     		movs	r2, #1
+ 193 0014 1021     		movs	r1, #16
+ 194 0016 2800     		movs	r0, r5
+ 195 0018 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 196              	.LVL10:
+ 101:Src/main.c    ****     HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+ 197              		.loc 1 101 0 discriminator 1
+ 198 001c FA24     		movs	r4, #250
+ 199 001e A400     		lsls	r4, r4, #2
+ 200 0020 2000     		movs	r0, r4
+ 201 0022 FFF7FEFF 		bl	HAL_Delay
+ 202              	.LVL11:
+ 102:Src/main.c    ****     HAL_Delay(1000);
+ 203              		.loc 1 102 0 discriminator 1
+ 204 0026 0022     		movs	r2, #0
+ 205 0028 1021     		movs	r1, #16
+ 206 002a 2800     		movs	r0, r5
+ 207 002c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 208              	.LVL12:
+ 103:Src/main.c    ****     /* USER CODE BEGIN 3 */
+ 209              		.loc 1 103 0 discriminator 1
+ 210 0030 2000     		movs	r0, r4
+ 211 0032 FFF7FEFF 		bl	HAL_Delay
+ 212              	.LVL13:
+ 213 0036 EAE7     		b	.L6
+ 214              		.cfi_endproc
+ 215              	.LFE35:
+ 217              		.section	.text.Error_Handler,"ax",%progbits
+ 218              		.align	2
+ 219              		.global	Error_Handler
+ 220              		.code	16
+ARM GAS  /tmp/ccte4f7i.s 			page 8
+
+
+ 221              		.thumb_func
+ 223              	Error_Handler:
+ 224              	.LFB38:
+ 165:Src/main.c    **** 
+ 166:Src/main.c    **** /* USER CODE BEGIN 4 */
+ 167:Src/main.c    **** 
+ 168:Src/main.c    **** /* USER CODE END 4 */
+ 169:Src/main.c    **** 
+ 170:Src/main.c    **** /**
+ 171:Src/main.c    ****   * @brief  This function is executed in case of error occurrence.
+ 172:Src/main.c    ****   * @retval None
+ 173:Src/main.c    ****   */
+ 174:Src/main.c    **** void Error_Handler(void)
+ 175:Src/main.c    **** {
+ 225              		.loc 1 175 0
+ 226              		.cfi_startproc
+ 227              		@ args = 0, pretend = 0, frame = 0
+ 228              		@ frame_needed = 0, uses_anonymous_args = 0
+ 229              		@ link register save eliminated.
+ 176:Src/main.c    ****   /* USER CODE BEGIN Error_Handler_Debug */
+ 177:Src/main.c    ****   /* User can add his own implementation to report the HAL error return state */
+ 178:Src/main.c    **** 
+ 179:Src/main.c    ****   /* USER CODE END Error_Handler_Debug */
+ 180:Src/main.c    **** }
+ 230              		.loc 1 180 0
+ 231              		@ sp needed
+ 232 0000 7047     		bx	lr
+ 233              		.cfi_endproc
+ 234              	.LFE38:
+ 236 0002 C046     		.text
+ 237              	.Letext0:
+ 238              		.file 2 "/usr/include/newlib/machine/_default_types.h"
+ 239              		.file 3 "/usr/include/newlib/sys/_stdint.h"
+ 240              		.file 4 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f030x6.h"
+ 241              		.file 5 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h"
+ 242              		.file 6 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h"
+ 243              		.file 7 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h"
+ 244              		.file 8 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h"
+ARM GAS  /tmp/ccte4f7i.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.c
+     /tmp/ccte4f7i.s:20     .text.MX_GPIO_Init:0000000000000000 $t
+     /tmp/ccte4f7i.s:24     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
+     /tmp/ccte4f7i.s:89     .text.MX_GPIO_Init:000000000000004c $d
+     /tmp/ccte4f7i.s:94     .text.SystemClock_Config:0000000000000000 $t
+     /tmp/ccte4f7i.s:99     .text.SystemClock_Config:0000000000000000 SystemClock_Config
+     /tmp/ccte4f7i.s:160    .text.main:0000000000000000 $t
+     /tmp/ccte4f7i.s:165    .text.main:0000000000000000 main
+     /tmp/ccte4f7i.s:218    .text.Error_Handler:0000000000000000 $t
+     /tmp/ccte4f7i.s:223    .text.Error_Handler:0000000000000000 Error_Handler
+                     .debug_frame:0000000000000010 $d
+
+UNDEFINED SYMBOLS
+memset
+HAL_GPIO_WritePin
+HAL_GPIO_Init
+HAL_RCC_OscConfig
+HAL_RCC_ClockConfig
+HAL_Init
+HAL_Delay
