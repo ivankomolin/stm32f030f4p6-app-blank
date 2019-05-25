@@ -16,7 +16,7 @@ A step by step series of examples that tell you how to get a development env run
 
 Clone repository
 ```
-$ git clone git@github.com:ivankomolin/stm32f030f4p6_app_blank.git ./
+$ git clone git@github.com:ivankomolin/stm32f030f4p6-app-blank.git ./
 ```
 
 ### Compile firmware
